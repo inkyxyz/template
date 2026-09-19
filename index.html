@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Иван — Менеджер</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Orbitron:wght@500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="space">
+
+<div class="space" id="space">
+  <div class="aurora">
+    <div class="aurora-layer aurora-1"></div>
+    <div class="aurora-layer aurora-2"></div>
+    <div class="aurora-layer aurora-3"></div>
+  </div>
+  <div class="stars-parallax" id="starsParallax">
+    <div class="galaxy" id="galaxy">
+      <div class="galaxy-arm"></div>
+      <div class="galaxy-arm arm2"></div>
+      <div class="galaxy-core"></div>
+    </div>
+    <div class="nebula n1"></div>
+    <div class="nebula n2"></div>
+    <div class="nebula n3"></div>
+    <div class="stars stars-1"></div>
+    <div class="stars stars-2"></div>
+    <div class="stars stars-3"></div>
+  </div>
+  <div class="noise"></div>
+</div>
+
+<div class="theme-bar">
+  <div class="theme-dot active" data-set="space" title="Космос"></div>
+  <div class="theme-dot" data-set="ocean" title="Океан"></div>
+  <div class="theme-dot" data-set="crimson" title="Багровый"></div>
+  <div class="theme-dot" data-set="emerald" title="Изумруд"></div>
+  <div class="theme-dot" data-set="day" title="Светлая"></div>
+  <div class="theme-sep" id="customSep" style="display:none;"></div>
+  <div class="theme-dot" data-set="custom" id="customDot" title="Своя тема" style="display:none;"></div>
+  <div class="theme-add" id="themeAdd" title="Создать свою тему">
+    <i class="fas fa-plus"></i>
+    <input type="color" id="customColorInput" value="#a855f7">
+  </div>
+</div>
+
+<div class="glass-wrap">
+  <div class="card-underlight"></div>
+  <div class="glass" id="glassCard">
+    <div class="avatar-wrap" onclick="avatarClick(this)">
+      <div class="avatar-inner"><i class="fas fa-hat-wizard"></i></div>
+    </div>
+
+    <div class="title-block">
+      <div class="title-main">Иван</div>
+      <div class="title-desc">Менеджер</div>
+    </div>
+
+    <div class="number-stage" onclick="copyTel()">
+      <div class="number-backdrop"></div>
+      <div class="copy-ripple"></div>
+      <div class="copy-ripple"></div>
+      <div class="copy-ripple"></div>
+      <div class="label">Контакт</div>
+      <div class="phone-number" id="phoneNumber">+7 (999) 123-45-67</div>
+      <div class="copy-flash">
+        <div class="copy-flash-icon"><i class="fas fa-check"></i></div>
+        <div class="copy-flash-text">Скопировано</div>
+      </div>
+    </div>
+
+    <button onclick="copyTel()" class="btn btn-copy" id="copyBtn">
+      <i class="fas fa-copy"></i><span>Скопировать номер</span>
+    </button>
+
+    <a onclick="goWarp(event,'call','tel:+79991234567')" class="btn btn-call" style="cursor:pointer;">
+      <i class="fas fa-phone-alt"></i><span>Позвонить</span>
+    </a>
+
+    <div class="socials">
+      <a class="social" onclick="goWarp(event,'whatsapp','https://wa.me/79991234567')">
+        <i class="fab fa-whatsapp" style="color:#25D366;"></i><span>WhatsApp</span>
+      </a>
+      <a class="social" onclick="goWarp(event,'telegram','https://t.me/79991234567')">
+        <i class="fab fa-telegram" style="color:#29b6f6;"></i><span>Telegram</span>
+      </a>
+      <a class="social" onclick="goWarp(event,'viber','viber://chat?number=79991234567')">
+        <i class="fab fa-viber" style="color:#7360f2;"></i><span>Viber</span>
+      </a>
+    </div>
+
+    <div class="info">
+      <div class="chip">
+        <span class="live-dot"></span><i class="fas fa-eye"></i><span id="viewsCount">128</span>
+      </div>
+      <div class="chip">
+        <i class="fas fa-link"></i><span>Link</span>
+      </div>
+    </div>
+
+    <div class="signature">
+      <i class="fas fa-star"></i> Создано @username
+    </div>
+  </div>
+</div>
+
+<div class="warp-flash" id="warpFlash"></div>
+<div class="warp-overlay" id="warpOverlay">
+  <div class="warp-bg"></div>
+  <div class="warp-glow"></div>
+  <div class="warp-content">
+    <div class="hero-icon" id="heroIcon">
+      <div class="hero-underlight"></div>
+      <div class="hero-glow"></div>
+      <i class="hero-icon-glyph" id="heroIconGlyph"></i>
+    </div>
+    <div class="warp-text" id="warpText"></div>
+    <div class="warp-sub" id="warpSub"></div>
+  </div>
+  <div class="warp-bar"><div class="warp-bar-fill"></div></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
